@@ -1,0 +1,46 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+ol {
+    counter-reset: list1;
+    list-style-type: none;
+}
+
+li {
+    color:#60598c;
+    line-height: 20px;
+}
+
+ol li::before {
+    counter-increment: list1;
+    content: counter(list1, upper-roman)". ";
+    font-weight: bold;
+    color: black;
+}
+
+ol li ol {
+    counter-reset: list2;
+}
+
+ol li ol li::before{
+    counter-increment: list2;
+    content: counter(list2, decimal)". ";
+    font-weight: bold;
+    color: black;
+}
+
+ol li ol li ol{
+    counter-reset: list3;
+}
+
+ol li ol li ol li::before{
+    counter-increment: list3;
+    content: counter(list3, lower-latin)". ";
+    font-weight: bold;
+    color: black;
+}
